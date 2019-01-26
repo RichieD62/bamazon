@@ -1,14 +1,18 @@
+require("dotenv").config();
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+
+var User = process.env.DB_USER;
+var Password = process.env.DB_PASSWORD;
 
 var connection = mysql.createConnection({
     host: "localhost",
 
     port: 3306,
 
-    user: "root",
+    user: User,
 
-    password: "gerald14",
+    password: Password,
     database:"bamazon_db"
 
 });
